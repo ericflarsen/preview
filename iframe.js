@@ -23,3 +23,37 @@
      var random = Math.random();
      sendMessage('' + random);
  });
+
+ var ele;
+ setInterval(function () {
+
+     var element = $(':hover');
+     if (element != ele) {
+         $(".lp-highlight").removeClass("lp-highlight");
+         $("#lp-label").remove()
+         ele = element;
+         if (element.length) {
+             var done = false;
+             var count = element.length;
+             do {
+                 var domElement = element[--count];
+
+                 var tagName = domElement.tagName;
+                 var id = domElement.id ? ' id="' + domElement.id + '"' : "";
+                 var classname = domElement.className ? ' classname="' + domElement.className + '"' : "";
+
+
+
+                 if (classname || id)
+                     done = true;
+             } while (!done && count > 0);
+             domElement.classList.add("lp-highlight");
+             //document.getElementById('test').innerHTML = "hover: &lt;" + tagName.toLowerCase() + id + classname + "&gt;";
+
+             var g = document.createElement('span');
+             g.setAttribute("id", "lp-label");
+             g.innerHTML = id + classname;
+             domElement.insertAdjacentElement('afterbegin', g);
+         }
+     }
+ }, 100);

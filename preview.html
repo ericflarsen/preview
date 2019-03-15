@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+
+<head>
+    <link href="preview.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="preview.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <div class="column container">
+        <header class="row header">
+            <img class="logo" src="https://www.laterpay.net/hubfs/template/logo-laterpay.svg">
+
+        </header>
+        <div class="row content column container border-top">
+            <div class="column content container border-right">
+                <section class="row content settings">
+                    <b>Settings</b>
+                    <p>Send Message: <button id="message_button">Hi there iframe</button></p>
+                    <p>Got Message:</p>
+                    <div id="results"></div>
+                </section>
+                <footer class="row footer border-top">
+                    <button class="install" type="">Finish installing on your site</button>
+                </footer>
+            </div>
+            <div class="column content container extraspace">
+                <header class="row header">
+                    <form id="browser-form">
+                        <div class="url-input-wrapper">
+                            <input id="url" class="url" type="text" placeholder="Enter your site's URL here" spellcheck="false" size="100">
+                            <button class="browser-submit" type="submit">Go</button>
+                            <button class="preview" type="">Preview</button>
+                        </div>
+                    </form>
+                </header>
+                <section class="row content border-top">
+                    <iframe scrolling="yes" src="" id="preview-frame"></iframe>
+                </section>
+            </div>
+        </div>
+        <footer class="row footer border-top ">
+            <b>footer</b>
+        </footer>
+    </div>
+</body>
+
+</html>

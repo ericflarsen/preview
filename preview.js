@@ -39,6 +39,8 @@ $(function () {
         console.log(e.data);
         try {
             var data = JSON.parse(e.data);
+            console.log("parsed");
+            console.log(data);
             if (data.laterpay == "highlight")
                 results.innerHTML = e.data;
         } catch (e) {}

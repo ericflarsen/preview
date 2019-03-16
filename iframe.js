@@ -60,6 +60,7 @@ function lp_endHighlighting() {
     $(".lp-highlight").removeClass("lp-highlight");
     $("#lp-label").remove();
     lp_data = {};
+    lp_ele = false;
 }
 
 function lp_startHighlighting() {

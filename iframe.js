@@ -12,17 +12,18 @@ var sendMessage = function (msg) {
     window.parent.postMessage(msg, '*');
 };
 
+
 // Listen to messages from parent window
 bindEvent(window, 'message', function (e) {
-    console.log("laterpay");
+    consolelog("laterpay");
     console.log(e.data);
     lp_startHighlighting();
 });
 // Send random message data on every button click
-bindEvent(messageButton, 'click', function (e) {
-    var random = Math.random();
-    sendMessage('' + random);
-});
+//bindEvent(messageButton, 'click', function (e) {
+//    var random = Math.random();
+//    sendMessage('' + random);
+//});
 
 var ele;
 var lp_highlighting;

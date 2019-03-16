@@ -42,6 +42,7 @@ bindEvent(window, 'mousedown', function (e) {
         s.laterpay = "highlight";
         s.element = lp_data;
         sendMessage(JSON.stringify(s));
+        lp_endHighlighting();
     }
 });
 // Send random message data on every button click
@@ -53,6 +54,13 @@ bindEvent(window, 'mousedown', function (e) {
 var lp_ele;
 var lp_highlighting;
 var lp_data = {};
+
+function lp_endHighlighting() {
+    clearInterval(lp_highlighting);
+    $(".lp-highlight").removeClass("lp-highlight");
+    $("#lp-label").remove();
+    lp_data = {};
+}
 
 function lp_startHighlighting() {
     console.log("highlighting");

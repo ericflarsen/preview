@@ -46,7 +46,7 @@ bindEvent(window, 'mousedown', function (e) {
 
 var lp_ele;
 var lp_highlighting;
-var lp_data;
+var lp_data = {};
 
 function lp_startHighlighting() {
     console.log("highlighting");

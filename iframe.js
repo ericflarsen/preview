@@ -21,24 +21,30 @@ bindEvent(window, 'message', function (e) {
     console.log(e.data);
     lp_startHighlighting();
 });
+
+// Send message to parent window
+bindEvent(window, 'mousedown', function (e) {
+    sendMessage('{laterpay=' + +'}')
+});
 // Send random message data on every button click
 //bindEvent(messageButton, 'click', function (e) {
 //    var random = Math.random();
 //    sendMessage('' + random);
 //});
 
-var ele;
+var lp_ele;
 var lp_highlighting;
+var lp_data;
 
 function lp_startHighlighting() {
     console.log("highlighting");
     lp_highlighting = setInterval(function () {
 
         var element = $(':hover');
-        if (element != ele) {
+        if (element != lp_ele) {
             $(".lp-highlight").removeClass("lp-highlight");
-            $("#lp-label").remove()
-            ele = element;
+            $("#lp-label").remove();
+            lp_ele = element;
             if (element.length) {
                 var done = false;
                 var count = element.length;
@@ -56,10 +62,10 @@ function lp_startHighlighting() {
                 } while (!done && count > 0);
                 domElement.classList.add("lp-highlight");
                 //document.getElementById('test').innerHTML = "hover: &lt;" + tagName.toLowerCase() + id + classname + "&gt;";
-
+                lp_data = id + classname;
                 var g = document.createElement('span');
                 g.setAttribute("id", "lp-label");
-                g.innerHTML = id + classname;
+                g.innerHTML = lp_data;
                 domElement.insertAdjacentElement('afterbegin', g);
             }
         }

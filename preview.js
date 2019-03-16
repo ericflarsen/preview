@@ -32,11 +32,16 @@ $(function () {
     };
     // Send random messge data on every button click
     bindEvent(messageButton, 'click', function (e) {
-        var random = Math.random();
-        sendMessage('' + random);
+        sendMessage('{laterpay:"highlight"}');
     });
     // Listen to message from child window
     bindEvent(window, 'message', function (e) {
-        results.innerHTML = e.data;
+        console.log(e.data);
+        try {
+            var data = JSON.parse(e.data);
+            if (data.laterpay == "highlight")
+                results.innerHTML = e.data;
+        }
+
     });
 });

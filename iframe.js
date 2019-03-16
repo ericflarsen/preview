@@ -34,7 +34,7 @@ bindEvent(window, 'message', function (e) {
 bindEvent(window, 'mousedown', function (e) {
     console.log("prep sending data");
     console.log(lp_data);
-    var s = '{"laterpay"=' + JSON.stringify(lp_data) + '}';
+    var s = '{"laterpay"="highlight", "element"=' + JSON.stringify(lp_data) + '}';
     console.log(s);
     sendMessage(s)
 });

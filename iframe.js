@@ -1,4 +1,6 @@
 // addEventListener support for IE8
+console.log("start");
+
 function bindEvent(element, eventName, eventHandler) {
     if (element.addEventListener) {
         element.addEventListener(eventName, eventHandler, false);
@@ -15,7 +17,7 @@ var sendMessage = function (msg) {
 
 // Listen to messages from parent window
 bindEvent(window, 'message', function (e) {
-    consolelog("laterpay");
+    console.log("laterpay");
     console.log(e.data);
     lp_startHighlighting();
 });

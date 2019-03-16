@@ -24,7 +24,7 @@ bindEvent(window, 'message', function (e) {
 
 // Send message to parent window
 bindEvent(window, 'mousedown', function (e) {
-    sendMessage('{laterpay=' + +'}')
+    sendMessage('{laterpay=' + lp_data + '}')
 });
 // Send random message data on every button click
 //bindEvent(messageButton, 'click', function (e) {

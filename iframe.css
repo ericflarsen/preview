@@ -6,6 +6,7 @@
 .lp-highlight {
     border: 3px solid #01a99d;
     position: relative;
+    cursor: pointer;
 }
 
 #lp-label {

@@ -30,8 +30,9 @@ bindEvent(window, 'message', function (e) {
 var ele;
 var lp_highlighting;
 
-function lp_startHighlighting(
-    console.log("highlighting"); lp_highlighting = setInterval(function () {
+function lp_startHighlighting() {
+    console.log("highlighting");
+    lp_highlighting = setInterval(function () {
 
         var element = $(':hover');
         if (element != ele) {
@@ -63,4 +64,4 @@ function lp_startHighlighting(
             }
         }
     }, 100);
-);
+}

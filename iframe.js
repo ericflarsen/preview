@@ -11,14 +11,12 @@ var sendMessage = function (msg) {
     // Make sure you are sending a string, and to stringify JSON
     window.parent.postMessage(msg, '*');
 };
-var results = document.getElementById('results'),
-    messageButton = document.getElementById('message_button');
 
 // Listen to messages from parent window
 bindEvent(window, 'message', function (e) {
     console.log("laterpay");
     console.log(e.data);
-    //lp_startHighlighting();
+    lp_startHighlighting();
 });
 // Send random message data on every button click
 bindEvent(messageButton, 'click', function (e) {

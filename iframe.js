@@ -64,20 +64,23 @@ function lp_startHighlighting() {
                     var domElement = element[--count];
 
                     var tagName = domElement.tagName;
-                    if (domElement.id)
+                    if (domElement.id) {
                         lp_data["id"] = domElement.id;
-                    if (domElement.className)
-                        lp_data["className"] = domElement.className;
-
-                    if (lp_data)
                         done = true;
+                    }
+                    if (domElement.className) {
+                        lp_data["className"] = domElement.className;
+                        done = true;
+                    }
+
+
                 } while (!done && count > 0);
                 domElement.classList.add("lp-highlight");
                 //document.getElementById('test').innerHTML = "hover: &lt;" + tagName.toLowerCase() + id + classname + "&gt;";
                 //lp_data = id + classname;
                 var g = document.createElement('span');
                 g.setAttribute("id", "lp-label");
-                g.innerHTML = lp_data;
+                g.innerHTML = JSON.stringify(lp_data);
                 domElement.insertAdjacentElement('afterbegin', g);
             }
         }

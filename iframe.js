@@ -17,10 +17,11 @@ var sendMessage = function (msg) {
 
 // Listen to messages from parent window
 bindEvent(window, 'message', function (e) {
-    console.log("laterpay");
+    console.log("laterpay - checking message");
     console.log(e.data);
     try {
         var data = JSON.parse(e.data);
+        console.log(data.laterpay);
         if (data.laterpay == "highlight")
             lp_startHighlighting();
     } catch (e) {}
@@ -29,7 +30,10 @@ bindEvent(window, 'message', function (e) {
 
 // Send message to parent window
 bindEvent(window, 'mousedown', function (e) {
-    sendMessage('{laterpay=' + lp_data + '}')
+    console.log(lp_data);
+    var s = '{laterpay=' + JSON.stringify(lp_data) + '}';
+    console.log(s);
+    sendMessage(s)
 });
 // Send random message data on every button click
 //bindEvent(messageButton, 'click', function (e) {

@@ -41,7 +41,7 @@ $(function () {
             var data = JSON.parse(e.data);
             if (data.laterpay == "highlight")
                 results.innerHTML = e.data;
-        }
+        } catch (e) {}
 
     });
 });

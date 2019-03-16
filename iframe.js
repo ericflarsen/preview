@@ -29,8 +29,7 @@
  var lp_highlighting;
 
  function lp_startHighlighting(
-
-     lp_highlighting = setInterval(function () {
+     console.log("highlighting"); lp_highlighting = setInterval(function () {
 
          var element = $(':hover');
          if (element != ele) {

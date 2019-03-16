@@ -18,12 +18,8 @@ var sendMessage = function (msg) {
 // Listen to messages from parent window
 bindEvent(window, 'message', function (e) {
     console.log("laterpay - checking message");
-    console.log(e.data);
     try {
         var data = JSON.parse(e.data);
-        console.log(data);
-        console.log(data.laterpay);
-        console.log("well");
         if (data.laterpay == "highlight")
             lp_startHighlighting();
     } catch (e) {}
@@ -33,13 +29,12 @@ bindEvent(window, 'message', function (e) {
 // Send message to parent window
 bindEvent(window, 'mousedown', function (e) {
     console.log("prep sending data");
-    console.log(lp_data);
-    var s = {};
-    s.laterpay = "highlight";
-    s.element = lp_data;
-    console.log(s);
-    console.log(JSON.stringify(s));
-    sendMessage(JSON.stringify(s));
+    if (!isEmpty(lp_data)) {
+        var s = {};
+        s.laterpay = "highlight";
+        s.element = lp_data;
+        sendMessage(JSON.stringify(s));
+    }
 });
 // Send random message data on every button click
 //bindEvent(messageButton, 'click', function (e) {
@@ -79,8 +74,7 @@ function lp_startHighlighting() {
 
                 } while (!done && count > 0);
                 domElement.classList.add("lp-highlight");
-                //document.getElementById('test').innerHTML = "hover: &lt;" + tagName.toLowerCase() + id + classname + "&gt;";
-                //lp_data = id + classname;
+
                 var g = document.createElement('span');
                 g.setAttribute("id", "lp-label");
                 g.innerHTML = JSON.stringify(lp_data);

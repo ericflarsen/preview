@@ -28,7 +28,7 @@ bindEvent(window, 'message', function (e) {
     console.log("laterpay - checking message");
     try {
         var data = JSON.parse(e.data);
-        if (data.laterpay == "highlight")
+        if (data.laterpay == "highlight" && !lp_ele)
             lp_startHighlighting();
     } catch (e) {}
 

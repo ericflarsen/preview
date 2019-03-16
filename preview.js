@@ -32,7 +32,7 @@ $(function () {
     };
     // Send random messge data on every button click
     bindEvent(messageButton, 'click', function (e) {
-        sendMessage('{laterpay:"highlight"}');
+        sendMessage('{"laterpay":"highlight"}');
     });
     // Listen to message from child window
     bindEvent(window, 'message', function (e) {

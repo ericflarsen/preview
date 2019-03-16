@@ -21,7 +21,7 @@ bindEvent(window, 'message', function (e) {
     console.log(e.data);
     try {
         var data = JSON.parse(e.data);
-        console.log(data.laterpay);
+        console.log(data);
         if (data.laterpay == "highlight")
             lp_startHighlighting();
     } catch (e) {}
@@ -31,7 +31,7 @@ bindEvent(window, 'message', function (e) {
 // Send message to parent window
 bindEvent(window, 'mousedown', function (e) {
     console.log(lp_data);
-    var s = '{laterpay=' + JSON.stringify(lp_data) + '}';
+    var s = '{"laterpay"=' + JSON.stringify(lp_data) + '}';
     console.log(s);
     sendMessage(s)
 });

@@ -74,7 +74,7 @@ function lp_startHighlighting() {
                 } while (!done && count > 0);
                 domElement.classList.add("lp-highlight");
                 //document.getElementById('test').innerHTML = "hover: &lt;" + tagName.toLowerCase() + id + classname + "&gt;";
-                lp_data = id + classname;
+                //lp_data = id + classname;
                 var g = document.createElement('span');
                 g.setAttribute("id", "lp-label");
                 g.innerHTML = lp_data;

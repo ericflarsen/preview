@@ -51,7 +51,7 @@ var lp_data = {};
 function lp_startHighlighting() {
     console.log("highlighting");
     lp_highlighting = setInterval(function () {
-
+        lp_data = {};
         var element = $(':hover');
         if (element != lp_ele) {
             $(".lp-highlight").removeClass("lp-highlight");

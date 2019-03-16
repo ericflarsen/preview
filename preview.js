@@ -28,7 +28,7 @@ $(function () {
     // Send a message to the child iframe
     var sendMessage = function (msg) {
         // Make sure you are sending a string, and to stringify JSON
-        iframeEl.contentWindow.postMessage(msg, '*');
+        console.log(iframeEl.contentWindow.postMessage(msg, '*'));
     };
     // Send random messge data on every button click
     bindEvent(messageButton, 'click', function (e) {

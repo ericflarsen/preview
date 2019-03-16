@@ -37,8 +37,8 @@
             flex: 0 1 40px;
         }
 
-        .extraspace {
-            flex: 2 1 auto;
+        .fixedspace {
+            flex: 0 0 400px;
         }
 
         iframe {

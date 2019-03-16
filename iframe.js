@@ -38,8 +38,8 @@ bindEvent(window, 'mousedown', function (e) {
     s.laterpay = "highlight";
     s.element = lp_data;
     console.log(s);
-    console.log(JSON.parse(s));
-    sendMessage(JSON.parse(s));
+    console.log(JSON.stringify(s));
+    sendMessage(JSON.stringify(s));
 });
 // Send random message data on every button click
 //bindEvent(messageButton, 'click', function (e) {

@@ -37,7 +37,9 @@
             flex: 0 1 40px;
         }
 
-        .extraspace {}
+        .extraspace {
+            flex: 2 1 auto;
+        }
 
         iframe {
             height: 100%;

@@ -7,6 +7,7 @@ $(function () {
         console.log(url);
 
         $('#preview-frame').attr('src', url);
+        $('#check-url').prop("checked", true);
     });
 
 
@@ -22,15 +23,15 @@ $(function () {
     }
 
     var iframeEl = document.getElementById('preview-frame'),
-        messageButton = document.getElementById('message_button'),
-        results = document.getElementById('results');
+        messageButton = document.getElementById('content-button'),
+        results = document.getElementById('content');
 
     // Send a message to the child iframe
     var sendMessage = function (msg) {
         // Make sure you are sending a string, and to stringify JSON
         iframeEl.contentWindow.postMessage(msg, '*');
     };
-    // Send random messge data on every button click
+    // Send messge data on every button click
     bindEvent(messageButton, 'click', function (e) {
         sendMessage('{"laterpay":"highlight"}');
     });
@@ -41,8 +42,15 @@ $(function () {
             var data = JSON.parse(e.data);
             console.log("parsed");
             console.log(data);
-            if (data.laterpay == "highlight")
-                results.innerHTML = e.data;
+            if (data.laterpay == "highlight") {
+                var r;
+                if (data.element.className)
+                    r = "." + data.element.className
+                if (data.element.id)
+                    r = "#" + data.element.id
+                results.innerHTML = r;
+                $('#check-content').prop("checked", true);
+            }
         } catch (e) {}
 
     });

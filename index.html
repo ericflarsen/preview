@@ -16,13 +16,65 @@
         <div class="row content column container border-top">
             <div class="column content container border-right fixedspace">
                 <section class="row content settings">
-                    <b>Settings</b>
-                    <p>Article Selection: <button id="message_button">Select article content</button></p>
-                    <p>Element:</p>
-                    <div id="results"></div>
+
+                    <h2>Settings</h2>
+                    <div class="setting-section">
+                        <label class="checkbox-container">Step 1
+                            <input id="check-url" type="checkbox" disabled>
+                            <span class="checkmark"></span>
+                        </label>
+                        <p>Type in your site's url</p>
+                    </div>
+                    <div class="setting-section">
+                        <label class="checkbox-container">Step 2
+                            <input id="check-content" type="checkbox" disabled>
+                            <span class="checkmark"></span>
+                        </label>
+                        <p>Identify site content and layout</p>
+                        <button id="content-button">Select article content</button>
+                        <span class="results" id="content">&nbsp;</span>
+                        <button>Add More content</button>
+                    </div>
+
+                    <div class="setting-section">
+                        <label class="checkbox-container">Step 3
+                            <input id="check-3" type="checkbox" disabled>
+                            <span class="checkmark"></span>
+                        </label>
+                        <p>Pricing</p>
+                    </div>
+
+                    <div class="setting-section">
+                        <label class="checkbox-container">Step 4
+                            <input id="check-4" type="checkbox" disabled>
+                            <span class="checkmark"></span>
+                        </label>
+                        <p>Ad Free</p>
+                    </div>
+
+                    <div class="setting-section">
+                        <label class="checkbox-container">Step 5
+                            <input id="check-5" type="checkbox" disabled>
+                            <span class="checkmark"></span>
+                        </label>
+                        <p>Advanced</p>
+                    </div>
+                    <div class="setting-section">
+                        <label class="checkbox-container">Step 6
+                            <input id="check-6" type="checkbox" disabled>
+                            <span class="checkmark"></span>
+                        </label>
+                        <p>Other</p>
+                    </div>
+
                 </section>
                 <footer class="row footer border-top">
-                    <button class="install" type="">Finish installing on your site</button>
+                    <label class="checkbox-container">Finish
+                        <input id="check-finish" type="checkbox" disabled>
+                        <span class="checkmark"></span>
+                    </label>
+                    <button class="install" type="">Install on your site</button>
+
                 </footer>
             </div>
             <div class="column content container">
@@ -31,7 +83,7 @@
                         <div class="url-input-wrapper">
                             <input id="url" class="url" type="text" placeholder="Enter your site's URL here" spellcheck="false" size="100">
                             <button class="browser-submit" type="submit">Go</button>
-                            <button class="preview" type="">Preview</button>
+                            <button class="preview" type="button">Preview</button>
                         </div>
                     </form>
                 </header>

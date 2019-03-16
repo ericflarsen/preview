@@ -1,3 +1,16 @@
+/*TODO: 
+    - pull into a class
+    - make messaging reusable and not hard coded for the single button
+    - Make steps / settings configurable and not hard coded
+    - URL typed in by merchant
+        - convert to subdomain
+        - add CNAME to CF
+        - add route to workers
+        - add subdomain to sandbox merchant account
+    - Save settings so they can be loaded into page (by anyone with link, so not local storage)
+    
+*/
+
 $(function () {
     $('#browser-form').submit(function (event) {
         console.log(event);

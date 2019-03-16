@@ -1,3 +1,9 @@
+/*TODO: 
+    - pull into a class
+    - make messaging reusable and not hard coded for the single button
+    - Pulling in settings so they can be loaded into page (by anyone with link)
+*/
+
 // addEventListener support for IE8
 console.log("start");
 

@@ -34,9 +34,12 @@ bindEvent(window, 'message', function (e) {
 bindEvent(window, 'mousedown', function (e) {
     console.log("prep sending data");
     console.log(lp_data);
-    var s = '{"laterpay"="highlight", "element"=' + JSON.stringify(lp_data) + '}';
+    var s = {};
+    s.laterpay = "highlight";
+    s.element = lp_data;
     console.log(s);
-    sendMessage(s)
+    console.log(JSON.parse(s));
+    sendMessage(JSON.parse(s));
 });
 // Send random message data on every button click
 //bindEvent(messageButton, 'click', function (e) {
@@ -65,11 +68,11 @@ function lp_startHighlighting() {
 
                     var tagName = domElement.tagName;
                     if (domElement.id) {
-                        lp_data["id"] = domElement.id;
+                        lp_data.id = domElement.id;
                         done = true;
                     }
                     if (domElement.className) {
-                        lp_data["className"] = domElement.className;
+                        lp_data.className = domElement.className;
                         done = true;
                     }
 

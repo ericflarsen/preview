@@ -19,7 +19,12 @@ var sendMessage = function (msg) {
 bindEvent(window, 'message', function (e) {
     console.log("laterpay");
     console.log(e.data);
-    lp_startHighlighting();
+    try {
+        var data = JSON.parse(e.data);
+        if (data.laterpay == "highlight")
+            lp_startHighlighting();
+    } catch (e) {}
+
 });
 
 // Send message to parent window
@@ -52,12 +57,12 @@ function lp_startHighlighting() {
                     var domElement = element[--count];
 
                     var tagName = domElement.tagName;
-                    var id = domElement.id ? ' id="' + domElement.id + '"' : "";
-                    var classname = domElement.className ? ' classname="' + domElement.className + '"' : "";
+                    if (domElement.id)
+                        lp_data["id"] = domElement.id;
+                    if (domElement.className)
+                        lp_data["className"] = domElement.className;
 
-
-
-                    if (classname || id)
+                    if (lp_data)
                         done = true;
                 } while (!done && count > 0);
                 domElement.classList.add("lp-highlight");

@@ -75,8 +75,7 @@ function lp_startHighlighting() {
         lp_data = {};
         var element = $(':hover');
         if (element != lp_ele) {
-            $(".lp-highlight").removeClass("lp-highlight");
-            $("#lp-label").remove();
+
             lp_ele = element;
             if (element.length) {
                 var done = false;
@@ -96,6 +95,9 @@ function lp_startHighlighting() {
 
 
                 } while (!done && count > 0);
+                $(".lp-highlight").removeClass("lp-highlight");
+                $("#lp-label").remove();
+
                 domElement.classList.add("lp-highlight");
 
                 var g = document.createElement('span');
